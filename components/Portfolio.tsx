@@ -171,7 +171,7 @@ export default function Portfolio() {
             <FaLinkedin className="text-3xl hover:text-yellow-300 transition-colors" />
           </motion.a>
           <motion.a
-            href="mailto:guilhermereinehr07"
+            href="mailto:guilhermereinehr07@gmail.com"
 
           >
             <FaEnvelope className="text-3xl hover:text-yellow-300 transition-colors" />
