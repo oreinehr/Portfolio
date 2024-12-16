@@ -1,9 +1,0 @@
-{
-    "redirects": [
-      {
-        "source": "http://(.*)",
-        "destination": "https://www.guilhermereinehrdev.com.br",
-        "permanent": true
-      }
-    ]
-  }
