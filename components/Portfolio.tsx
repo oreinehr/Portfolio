@@ -14,6 +14,7 @@ import {
   SiPython 
 } from 'react-icons/si';
 import { OrganicShape } from './OrganicShape'
+import { image } from 'framer-motion/client'
 
 const projects = [
   { 
@@ -31,8 +32,14 @@ const projects = [
     image: 'https://api.microlink.io/?url=https%3A%2F%2Fcatalog-site-next-gyzvwk1mm-vitorhascs-projects.vercel.app%2Fpages%2Fhome&screenshot=true&embed=screenshot.url'
   },
 
-  { id: 3, title: 'Projeto 3', description: 'Descrição do Projeto 3' },
-  { id: 4, title: 'Projeto 4', description: 'Descrição do Projeto 4' },
+  { id: 3, title: 'Portfólio Gustavo', description: 'Um portfólio destinado ao Editor e Diretor de Conteúdo do Gustavo Reinehr',
+    link: 'https://gustavo-reinehr.vercel.app/',
+    image:'https://api.microlink.io/?url=https%3A%2F%2Fgustavo-reinehr.vercel.app%2F&screenshot=true&embed=screenshot.url'
+   },
+  { id: 4, title: 'Blog Nike', description: 'Trabalho Escolar',
+    link: 'https://oreinehr.github.io/Blog/',
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Foreinehr.github.io%2FBlog%2F&screenshot=true&embed=screenshot.url'
+   },
 ]
 
 const technologies = [
@@ -160,6 +167,8 @@ export default function Portfolio() {
             href="https://github.com/oreinehr"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+  whileTap={{ scale: 0.9 }}
           >
             <FaGithub className="text-3xl hover:text-yellow-300 transition-colors" />
           </motion.a>
@@ -167,15 +176,22 @@ export default function Portfolio() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+  whileTap={{ scale: 0.9 }}
           >
             <FaLinkedin className="text-3xl hover:text-yellow-300 transition-colors" />
           </motion.a>
-          <motion.a
-            href="mailto:guilhermereinehr07@gmail.com"
-
-          >
-            <FaEnvelope className="text-3xl hover:text-yellow-300 transition-colors" />
-          </motion.a>
+          
+          <motion.a 
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=guilhermereinehr07@gmail.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.1 }} 
+  whileTap={{ scale: 0.9 }}
+>
+  <FaEnvelope className="text-3xl hover:text-yellow-300 transition-colors" />
+</motion.a>
+         
         </div>
       </footer>
     </div>
