@@ -12,8 +12,9 @@ import {
   SiMysql, 
   SiNextdotjs, 
   SiPython 
-} from 'react-icons/si';
+} from 'react-icons/si'
 import { OrganicShape } from './OrganicShape'
+import Image from 'next/image'
 
 const projects = [
   { 
@@ -49,9 +50,7 @@ const technologies = [
   { id: 5, name: 'MySQL', icon: SiMysql, color: 'text-blue-600' },
   { id: 6, name: 'Next.js', icon: SiNextdotjs, color: 'text-gray-800' },
   { id: 7, name: 'Python', icon: SiPython, color: 'text-blue-400' },
-
-  
-];
+]
 
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
@@ -122,23 +121,23 @@ export default function Portfolio() {
                 className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-300"
               >
                 {project.image && (
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title}
+                    width={500} // Ajuste a largura conforme necessário
+                    height={300} // Ajuste a altura conforme necessário
                     className="w-full h-48 object-cover"
                   />
                 )}
-                <div className="p-6"><a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
-                  <p className="text-gray-200 mb-4">{project.description}</p>
+                <div className="p-6">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
+                    <p className="text-gray-200 mb-4">{project.description}</p>
                   </a>
                 </div>
               </motion.div>
-            
             ))}
-            
           </div>
-          
         </section>
 
         <section className="mb-16">
@@ -167,33 +166,28 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }} 
-  whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <FaGithub className="text-3xl hover:text-yellow-300 transition-colors" />
+            <FaGithub className="text-2xl" />
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/guilherme-reinehr/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }} 
-  whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <FaLinkedin className="text-3xl hover:text-yellow-300 transition-colors" />
+            <FaLinkedin className="text-2xl" />
           </motion.a>
-          
-          <motion.a 
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=guilhermereinehr07@gmail.com" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.1 }} 
-  whileTap={{ scale: 0.9 }}
->
-  <FaEnvelope className="text-3xl hover:text-yellow-300 transition-colors" />
-</motion.a>
-         
+          <motion.a
+            href="mailto:guilherme.reinehr@example.com"
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaEnvelope className="text-2xl" />
+          </motion.a>
         </div>
       </footer>
     </div>
   )
 }
-
