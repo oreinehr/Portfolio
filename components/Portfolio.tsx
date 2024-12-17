@@ -14,7 +14,6 @@ import {
   SiPython 
 } from 'react-icons/si';
 import { OrganicShape } from './OrganicShape'
-import { image } from 'framer-motion/client'
 
 const projects = [
   { 
