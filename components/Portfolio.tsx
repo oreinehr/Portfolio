@@ -171,7 +171,7 @@ export default function Portfolio() {
             <FaGithub className="text-2xl" />
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/guilherme-reinehr/"
+            href="https://www.linkedin.com/in/guilherme-reinehr-a24117340/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }} 
@@ -189,5 +189,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  )
+  ) 
 }
