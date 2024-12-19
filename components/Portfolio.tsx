@@ -87,7 +87,7 @@ export default function Portfolio() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-xl text-white"
         >
-          Desenvolvedor Frontend
+          Designer & Desenvolvedor Frontend
         </motion.p>
       </header>
 
