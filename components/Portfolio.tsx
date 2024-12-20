@@ -181,7 +181,7 @@
               <FaLinkedin className="text-2xl" />
             </motion.a>
             <motion.a
-              href="mailto:guilhermereinehr07@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=guilhermereinehr07@gmail.com"
               whileHover={{ scale: 1.1 }} 
               whileTap={{ scale: 0.9 }}
             >
