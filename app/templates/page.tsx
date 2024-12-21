@@ -83,10 +83,10 @@ export default function TemplatesPage() {
     setShowContactCard(!showContactCard)
   }
 
-  const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
+  const closeContactCard = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     // Impede que o clique no card feche o card
-    e.stopPropagation()
-  }
+    e.stopPropagation();
+  };
 
   return (
     <div className="min-h-screen bg-white">
