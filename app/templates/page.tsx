@@ -5,7 +5,7 @@ import { Video } from '../../components/ui/Video'
 import { useState } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useSpring, animated } from '@react-spring/web'
+import { useSpring } from '@react-spring/web'
 const templates = [
   {
     id: 1,
@@ -65,16 +65,7 @@ const templates = [
 
 
 export default function TemplatesPage() {
-    const { scrollYProgress } = useScroll()
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 5])
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
-
-  const springProps = useSpring({
-    from: { transform: 'translateY(50px)', opacity: 0 },
-    to: { transform: 'translateY(0px)', opacity: 1 },
-    config: { mass: 1, tension: 120, friction: 14 },
-  })
-
+  
   // Estado para controlar a visibilidade do card de contato
   const [showContactCard, setShowContactCard] = useState(false)
 
@@ -88,7 +79,7 @@ export default function TemplatesPage() {
     e.stopPropagation()
   }
 
-    const [selectedTemplate, setSelectedTemplate] = useState<number | null>(null)
+    
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
