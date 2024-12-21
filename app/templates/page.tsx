@@ -4,7 +4,7 @@ import Navigation from '../../components/ui/Navigation'
 import { Video } from '../../components/ui/Video'
 import { useState } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 
 const templates = [
   {
@@ -65,7 +65,7 @@ const templates = [
 
 
 export default function TemplatesPage() {
-    const { scrollYProgress } = useScroll()
+    useScroll()
 
 
   // Estado para controlar a visibilidade do card de contato
