@@ -68,6 +68,13 @@ body {
   }
 }
 
+.text-gradient {
+  background: linear-gradient(45deg, #ff6a00, #ee0979); /* Gradiente desejado */
+  -webkit-background-clip: text;  /* Aplica o gradiente ao texto */
+  background-clip: text;          /* Aplica o gradiente ao texto */
+  color: transparent;             /* Torna a cor do texto transparente para mostrar o gradiente */
+}
+
 @layer base {
   * {
   
