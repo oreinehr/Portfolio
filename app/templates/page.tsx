@@ -1,6 +1,5 @@
 'use client'
 
-
 import Navigation from '../../components/ui/Navigation'
 import { Video } from '../../components/ui/Video'
 import { useState } from 'react'
