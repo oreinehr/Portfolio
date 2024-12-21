@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { useSpring, animated } from '@react-spring/web'
-import Navigation2 from './ui/Navigation2'
 import { 
   SiReact, 
   SiNodedotjs, 
