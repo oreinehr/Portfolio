@@ -83,7 +83,7 @@ export default function TemplatesPage() {
     setShowContactCard(!showContactCard)
   }
 
-  const closeContactCard = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const closeContactCard = (e: React.SyntheticEvent) => {
     // Impede que o clique no card feche o card
     e.stopPropagation();
   };
