@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { useSpring, animated } from '@react-spring/web'
+import Navigation2 from './ui/Navigation2'
 import { 
   SiReact, 
   SiNodedotjs, 
@@ -70,11 +71,6 @@ export default function Portfolio() {
     setShowContactCard(!showContactCard)
   }
 
-  // Função para fechar o card ao clicar fora
-  //const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Impede que o clique no card feche o card
-    //e.stopPropagation()
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 overflow-hidden">
