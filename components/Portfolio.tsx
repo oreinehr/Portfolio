@@ -71,8 +71,17 @@ export default function Portfolio() {
     setShowContactCard(!showContactCard)
   }
 
+  const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Impede que o clique no card feche o card
+    e.stopPropagation()
+  }
+
+  
 
   return (
+    
+  
+
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 overflow-hidden">
         <Navigation2/>
       <motion.div
@@ -162,43 +171,70 @@ export default function Portfolio() {
                 className="flex flex-col items-center"
               >
                 <tech.icon className={`text-6xl ${tech.color}`} />
-                <p className="text-white text-lg mt-2">{tech.name}</p>
+                <span className="mt-2 text-white font-semibold">{tech.name}</span>
               </motion.div>
             ))}
           </div>
         </section>
-
-        <section className="mb-16 text-center">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-4xl font-bold text-white mb-4"
-          >
-            Contato
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="text-white text-xl mb-6"
-          >
-            Fique à vontade para entrar em contato comigo. Eu adoraria conversar sobre projetos e oportunidades.
-          </motion.p>
-
-          <div className="flex justify-center gap-8">
-            <a href="mailto:contato@vitorhascs.dev" target="_blank" rel="noopener noreferrer">
-              <FaEnvelope className="text-white text-3xl hover:text-blue-400 transition-all duration-300" />
-            </a>
-            <a href="https://github.com/vitorhascs" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-white text-3xl hover:text-gray-600 transition-all duration-300" />
-            </a>
-            <a href="https://www.linkedin.com/in/vitorhascs/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-white text-3xl hover:text-blue-500 transition-all duration-300" />
-            </a>
-          </div>
-        </section>
       </main>
+
+      <footer className="relative z-10 bg-purple-900 bg-opacity-50 text-white py-8">
+        <div className="container mx-auto px-4 flex justify-center space-x-6">
+          <motion.a
+            href="https://github.com/oreinehr"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaGithub className="text-2xl" />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/guilherme-reinehr-a24117340/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaLinkedin className="text-2xl" />
+          </motion.a>
+          <motion.a
+            onClick={toggleContactCard}
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+            className="cursor-pointer"
+          >
+            <FaEnvelope className="text-2xl" />
+          </motion.a>
+        </div>
+
+        {/* Card com email que aparece ao clicar no envelope */}
+        {showContactCard && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-50"
+            onClick={toggleContactCard} // Fechar o card ao clicar fora dele
+          >
+            <div
+              onClick={closeContactCard} // Impede que o clique no card feche o card
+              className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg w-full sm:w-auto"
+            >
+              <button
+                onClick={toggleContactCard} // Botão de fechar
+                className="absolute top-4 right-4 text-xl text-gray-600"
+              >
+                &times; {/* Ícone de fechar */}
+              </button>
+              <p className="font-semibold text-black">
+                Contate <strong className="text-gradient">guilhermereinehr07@gmail.com</strong>
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </footer>
     </div>
-  )
+  ) 
 }

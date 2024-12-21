@@ -13,7 +13,6 @@ const templates = [
     title: "Style Up Página Guarda Roupa",
     description: "Site para Estilização de Vestuário Pessoal",
     image: "https://i.imgur.com/nYcCK1k.png",
-    
     video: "https://stup-gamma.vercel.app/static/media/videotcc.24025350485fdcfa8b5f.mp4",
     category: "Design"
   },
@@ -21,42 +20,49 @@ const templates = [
     id: 2,
     title: "Style Up Página Looks",
     image: "https://i.imgur.com/XcaYuWW.png",
+    video: undefined,
     category: "Design"
   },
   {
     id: 3,
     title: "Style Up Página Contato",
     image: "https://i.imgur.com/OoxSwsd.png",
+    video: undefined,
     category: "Design"
   },
   {
     id: 4,
     title: "Style Up Página Home",
     image: "https://i.imgur.com/Te5mnU0.png",
+    video: undefined,
     category: "Design"
 },
   {
     id: 5,
     title: "Portfólio Editor de video V1",
     image: "https://i.imgur.com/FZ1tgpJ.png",
+    video: undefined,
     category: "Design"
   },
   {
     id: 6,
     title: "Portfólio Editor de video V1",
     image: "https://i.imgur.com/f7J51Kh.png",
+    video: undefined,
     category: "Template Figma Vendido"
   },
   {
     id: 7,
     title: "Portfólio Editor de video V2",
     image: "https://i.imgur.com/qMLYBSc.png",
+    video: undefined,
     category: "Template Figma Vendido"
   },
   {
     id: 8,
     title: "Portfólio Editor de video V2",
     image: "https://i.imgur.com/zdZolZM.png",
+    video: undefined,
     category: "Template Figma Vendido"
   },
   
@@ -82,7 +88,6 @@ export default function TemplatesPage() {
     e.stopPropagation()
   }
 
-    const [] = useState<number | null>(null)
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
