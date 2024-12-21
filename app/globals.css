@@ -74,13 +74,3 @@ body {
   background-clip: text;          /* Aplica o gradiente ao texto */
   color: transparent;             /* Torna a cor do texto transparente para mostrar o gradiente */
 }
-
-@layer base {
-  * {
-  
-  }
-  body {
-   
-}
-
-}

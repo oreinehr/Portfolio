@@ -64,16 +64,10 @@ export default function Portfolio() {
   })
 
   // Estado para controlar a visibilidade do card de contato
-  const [showContactCard, setShowContactCard] = useState(false)
+  const [] = useState(false)
 
   // Função para alternar a visibilidade do card
-  const toggleContactCard = () => {
-    setShowContactCard(!showContactCard)
-  }
 
-  const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Impede que o clique no card feche o card
-    e.stopPropagation()
   }
 
   
