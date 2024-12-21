@@ -1,3 +1,4 @@
+import React from 'react'
 import './globals.css'
 import { Poppins, Playfair_Display } from 'next/font/google'
 
