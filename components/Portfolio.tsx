@@ -70,11 +70,12 @@ export default function Portfolio() {
     setShowContactCard(!showContactCard)
   }
 
-  // Função para fechar o card ao clicar fora
-  const closeContactCard = (e) => {
+  const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
     // Impede que o clique no card feche o card
     e.stopPropagation()
   }
+
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 overflow-hidden">
