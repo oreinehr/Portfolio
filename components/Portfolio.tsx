@@ -72,9 +72,9 @@ export default function Portfolio() {
   }
 
   // Função para fechar o card ao clicar fora
-  const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
+  //const closeContactCard = (e: React.MouseEvent<HTMLDivElement>) => {
     // Impede que o clique no card feche o card
-    e.stopPropagation()
+    //e.stopPropagation()
   }
 
   return (
