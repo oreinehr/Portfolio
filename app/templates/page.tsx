@@ -1,11 +1,11 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react'
 import Navigation from '../../components/ui/Navigation'
 import { Video } from '../../components/ui/Video'
-import { useState } from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
+import TemplateDetail from '../../components/ui/TemplateDetail' // Importe o TemplateDetail
+import {FaGithub, FaLinkedin, FaEnvelope} from 'react-icons/fa'
 
 const templates = [
   {
@@ -36,7 +36,7 @@ const templates = [
     image: "https://i.imgur.com/Te5mnU0.png",
     video: undefined,
     category: "Design"
-},
+  },
   {
     id: 5,
     title: "Portfólio Editor de video V1",
@@ -64,29 +64,30 @@ const templates = [
     image: "https://i.imgur.com/zdZolZM.png",
     video: undefined,
     category: "Template Figma Vendido"
-  },
-  
-  
+  }
 ]
 
-
-
 export default function TemplatesPage() {
-    useScroll()
-
+  // Estado para armazenar o template atualmente selecionado
+  const [selectedTemplate, setSelectedTemplate] = useState(null)
 
   // Estado para controlar a visibilidade do card de contato
   const [showContactCard, setShowContactCard] = useState(false)
 
-  // Função para alternar a visibilidade do card
-  const toggleContactCard = () => {
-    setShowContactCard(!showContactCard)
+  // Função para abrir o TemplateDetail
+  const handleViewTemplate = (template) => {
+    setSelectedTemplate(template)
   }
 
-  const closeContactCard = (e: React.SyntheticEvent) => {
-    // Impede que o clique no card feche o card
-    e.stopPropagation();
-  };
+  // Função para fechar o TemplateDetail
+  const handleCloseDetail = () => {
+    setSelectedTemplate(null)
+  }
+
+  // Função para alternar a visibilidade do card de contato
+  const toggleContactCard = () => {
+    setShowContactCard((prev) => !prev)
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -122,7 +123,7 @@ export default function TemplatesPage() {
         {/* Templates Grid */}
         <section className="px-4 pb-20">
           <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {templates.map((template, index) => (
                 <motion.div
                   key={template.id}
@@ -130,8 +131,9 @@ export default function TemplatesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="group cursor-pointer"
+                  onClick={() => handleViewTemplate(template)} // Chama a função para abrir o TemplateDetail
                 >
-                  <div className="relative aspect-[16/9 ] overflow-hidden rounded-lg bg-gray-100">
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-gray-100">
                     <img
                       src={template.image}
                       alt={template.title}
@@ -155,64 +157,73 @@ export default function TemplatesPage() {
           </div>
         </section>
       </main>
+
+      {/* Exibe o TemplateDetail se um template for selecionado */}
+      {selectedTemplate && (
+        <TemplateDetail 
+          template={selectedTemplate} 
+          onClose={handleCloseDetail} // Passa a função para fechar o template
+        />
+      )}
+
+      {/* Footer */}
       <footer className="relative z-10 bg-gray-800 bg-opacity-50 text-white py-8">
-              <div className="container mx-auto px-4 flex justify-center space-x-6">
-                <motion.a
-                  href="https://github.com/oreinehr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }} 
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaGithub className="text-2xl" />
-                </motion.a>
-                <motion.a
-                  href="https://www.linkedin.com/in/guilherme-reinehr-a24117340/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }} 
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaLinkedin className="text-2xl" />
-                </motion.a>
-                <motion.a
-                  onClick={toggleContactCard}
-                  whileHover={{ scale: 1.1 }} 
-                  whileTap={{ scale: 0.9 }}
-                  className="cursor-pointer"
-                >
-                  <FaEnvelope className="text-2xl" />
-                </motion.a>
-              </div>
-      
-              {/* Card com email que aparece ao clicar no envelope */}
-              {showContactCard && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.3 }}
-                  className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-50"
-                  onClick={toggleContactCard} // Fechar o card ao clicar fora dele
-                >
-                  <div
-                    onClick={closeContactCard} // Impede que o clique no card feche o card
-                    className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg w-full sm:w-auto"
-                  >
-                    <button
-                      onClick={toggleContactCard} // Botão de fechar
-                      className="absolute top-4 right-4 text-xl text-gray-600"
-                    >
-                      &times; {/* Ícone de fechar */}
-                    </button>
-                    <p className="font-semibold text-black">
-                      Contate <strong className="text-gradient">guilhermereinehr07@gmail.com</strong>
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-            </footer>
+        <div className="container mx-auto px-4 flex justify-center space-x-6">
+          <motion.a
+            href="https://github.com/oreinehr"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaGithub className="text-2xl" />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/guilherme-reinehr-a24117340/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaLinkedin className="text-2xl" />
+          </motion.a>
+          <motion.a
+            onClick={toggleContactCard} // Agora funciona corretamente
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
+            className="cursor-pointer"
+          >
+            <FaEnvelope className="text-2xl" />
+          </motion.a>
+        </div>
+
+        {/* Card com email que aparece ao clicar no envelope */}
+        {showContactCard && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-50"
+            onClick={toggleContactCard} // Fechar o card ao clicar fora dele
+          >
+            <div
+              onClick={(e) => e.stopPropagation()} // Impede que o clique no card feche o card
+              className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-center max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg w-full sm:w-auto"
+            >
+              <button
+                onClick={toggleContactCard} // Botão de fechar
+                className="absolute top-4 right-4 text-xl text-gray-600"
+              >
+                &times; {/* Ícone de fechar */}
+              </button>
+              <p className="font-semibold text-black">
+                Contate <strong className="text-gradient">guilhermereinehr07@gmail.com</strong>
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </footer>
     </div>
   )
 }
-

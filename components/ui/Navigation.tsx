@@ -19,7 +19,7 @@ export default function Navigation() {
             </Link>
             
             <Link href="/templates" className="text-gray-900 hover:text-gray-600 transition-colors">
-              Projetos
+              Design
             </Link>
           </div>
           
