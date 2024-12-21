@@ -40,7 +40,7 @@ export default function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : -60 }} // Controlando a visibilidade
       transition={{ duration: 0.3 }}
-      className="fixed w-full top-0 z-50 bg-transparent"
+      className=" w-full top-0 z-50 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
