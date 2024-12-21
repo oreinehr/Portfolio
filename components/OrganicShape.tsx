@@ -19,4 +19,3 @@ export const OrganicShape: React.FC<OrganicShapeProps> = ({ className }) => {
     </svg>
   );
 };
-

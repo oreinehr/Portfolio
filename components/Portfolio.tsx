@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { useSpring, animated } from '@react-spring/web'
+import Navigation2 from './ui/Navigation2'
 import { 
   SiReact, 
   SiNodedotjs, 
@@ -78,7 +79,11 @@ export default function Portfolio() {
   
 
   return (
+    
+  
+
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 overflow-hidden">
+        <Navigation2/>
       <motion.div
         className="fixed inset-0 pointer-events-none z-0"
         style={{ scale, opacity }}
@@ -91,7 +96,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-extrabold text-white mb-4"
+          className="text-6xl font-extrabold mt-4 text-white mb-4"
         >
           Guilherme Reinehr
         </motion.h1>
