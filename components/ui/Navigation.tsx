@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Search, ShoppingBag } from 'lucide-react'
+
 
 export default function Navigation() {
   return (
