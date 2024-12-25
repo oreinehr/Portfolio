@@ -170,11 +170,11 @@ export default function TemplatesPage() {
 
       {/* Exibe o TemplateDetail se um template for selecionado */}
       {selectedTemplate && (
-        <TemplateDetail 
-          template={selectedTemplate} 
-          onClose={handleCloseDetail} // Passa a função para fechar o template
-        />
-      )}
+  <TemplateDetail 
+    template={{ ...selectedTemplate, description: selectedTemplate.description || '' }} // Passando valor padrão para description
+    onClose={handleCloseDetail}
+  />
+)}
 
       {/* Footer */}
       <footer className="relative z-10 bg-gray-800 bg-opacity-50 text-white py-8">
