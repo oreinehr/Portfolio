@@ -110,7 +110,7 @@ export default function Portfolio() {
         </motion.p>
       </header>
 
-      <main className="relative z-10 container mx-auto px-32 py-12">
+      <main className="relative z-10 container mx-auto px-12 md:px-32 py-12">
         <animated.section style={springProps} className="mb-16">
           <h2 className="text-4xl font-bold text-white text-center mb-8">Sobre Mim</h2>
           <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 text-white">
