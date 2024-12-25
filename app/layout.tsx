@@ -1,6 +1,6 @@
-import React from 'react'
 import './globals.css'
 import { Poppins, Playfair_Display } from 'next/font/google'
+import { ThemeProvider } from '../components/ui/ThemeContext'
 
 const poppins = Poppins({ 
   subsets: ['latin'],
@@ -25,7 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${playfair.variable}`}>
-      <body className="font-sans">{children}</body>
+      <ThemeProvider>
+        <body className="font-sans">{children}</body>
+      </ThemeProvider>
     </html>
   )
 }

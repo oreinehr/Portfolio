@@ -52,6 +52,10 @@ export default function Navigation() {
             <Link href="/templates" className="text-white hover:text-gray-600 transition-colors">
               Design
             </Link>
+
+            <Link href="/ai" className="text-white hover:text-gray-600 transition-colors">
+              AI
+            </Link>
           </div>
 
           <Link href="/" className="flex-shrink-0">

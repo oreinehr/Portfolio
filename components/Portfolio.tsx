@@ -82,13 +82,13 @@ export default function Portfolio() {
     
   
 
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 overflow-hidden">
+    <div className="min-h-screen bg-[#0F1010] overflow-hidden">
         <Navigation2/>
       <motion.div
         className="fixed inset-0 pointer-events-none z-0"
         style={{ scale, opacity }}
       >
-        <OrganicShape className="absolute top-0 left-0 w-full h-full text-yellow-300 opacity-20" />
+        <OrganicShape className="absolute top-0 left-0 w-full h-full text-gray-800 opacity-20" />
       </motion.div>
 
       <header className="relative z-10 py-16 text-center">
@@ -110,7 +110,7 @@ export default function Portfolio() {
         </motion.p>
       </header>
 
-      <main className="relative z-10 container mx-auto px-4 py-12">
+      <main className="relative z-10 container mx-auto px-32 py-12">
         <animated.section style={springProps} className="mb-16">
           <h2 className="text-4xl font-bold text-white text-center mb-8">Sobre Mim</h2>
           <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 text-white">
@@ -178,7 +178,7 @@ export default function Portfolio() {
         </section>
       </main>
 
-      <footer className="relative z-10 bg-purple-900 bg-opacity-50 text-white py-8">
+      <footer className="relative z-10 bg-gray-800 bg-opacity-50 text-white py-8">
         <div className="container mx-auto px-4 flex justify-center space-x-6">
           <motion.a
             href="https://github.com/oreinehr"
