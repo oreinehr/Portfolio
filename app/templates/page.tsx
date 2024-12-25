@@ -5,9 +5,19 @@ import Navigation from '../../components/ui/Navigation'
 import { Video } from '../../components/ui/Video'
 import { motion } from 'framer-motion'
 import TemplateDetail from '../../components/ui/TemplateDetail' // Importe o TemplateDetail
-import {FaGithub, FaLinkedin, FaEnvelope} from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
-const templates = [
+// Definindo a interface para os templates
+interface Template {
+  id: number;
+  title: string;
+  description?: string;
+  image: string;
+  video?: string;
+  category: string;
+}
+
+const templates: Template[] = [
   {
     id: 1,
     title: "Style Up Página Guarda Roupa",
@@ -69,13 +79,13 @@ const templates = [
 
 export default function TemplatesPage() {
   // Estado para armazenar o template atualmente selecionado
-  const [selectedTemplate, setSelectedTemplate] = useState(null)
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null)
 
   // Estado para controlar a visibilidade do card de contato
   const [showContactCard, setShowContactCard] = useState(false)
 
   // Função para abrir o TemplateDetail
-  const handleViewTemplate = (template) => {
+  const handleViewTemplate = (template: Template) => {
     setSelectedTemplate(template)
   }
 
@@ -90,7 +100,7 @@ export default function TemplatesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0F1010]">
       <Navigation />
       
       <main className="pt-16">
