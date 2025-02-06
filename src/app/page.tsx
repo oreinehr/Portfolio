@@ -35,15 +35,15 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn delay={0.5}>
-          <Button
+        <Button
             size="lg"
-            variant=""
+            variant="solid" // Use "solid", "outline", or "ghost" here
             className="mt-12 text-muted-foreground transition-transform hover:scale-105"
             onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            View Work
+                                                                                                      >
+                View Work
             <ArrowDown className="ml-2 h-4 w-4" />
-          </Button>
+        </Button>
         </FadeIn>
 
       </section>
