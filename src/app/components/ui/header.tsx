@@ -10,7 +10,7 @@ const navItems = [
   { href: "#work", label: "Work" },
   { href: "#ai-art", label: "AI Art" },
   { href: "#about", label: "About" },
-  { href: "#labs", label: "Labs" },
+
 ]
 
 export function Header() {
