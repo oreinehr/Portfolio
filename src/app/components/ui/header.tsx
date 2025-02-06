@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { Mail } from "lucide-react"
 import { motion } from "framer-motion"
-import { usePathname } from "next/navigation"
+
 
 const navItems = [
   { href: "#work", label: "Work" },
@@ -14,7 +14,7 @@ const navItems = [
 ]
 
 export function Header() {
-  const pathname = usePathname()
+  
 
   return (
     <motion.header
@@ -46,7 +46,7 @@ export function Header() {
         </nav>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
-          <Button variant="" size="icon">
+          <Button variant="ghost" size="icon">
             <Mail className="size-5" />
           </Button>
         </motion.div>
