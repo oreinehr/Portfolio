@@ -1,10 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, HTMLMotionProps } from "framer-motion"
 import { cn } from "../../components/ui/lib/utils"
-import type React from "react" // Import React
+import type React from "react"
 
-interface FadeInProps extends React.HTMLAttributes<HTMLDivElement> {
+interface FadeInProps extends Omit<HTMLMotionProps<"div">, "ref"> {
   children: React.ReactNode
   delay?: number
 }
@@ -26,4 +26,3 @@ export function FadeIn({ children, delay = 0, className, ...props }: FadeInProps
     </motion.div>
   )
 }
-
