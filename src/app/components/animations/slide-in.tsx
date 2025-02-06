@@ -1,10 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, HTMLMotionProps } from "framer-motion"
 import { cn } from "../ui/lib/utils"
 import type React from "react"
 
-interface SlideInProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SlideInProps extends Omit<HTMLMotionProps<"div">, "ref"> {
   children: React.ReactNode
   direction?: "left" | "right" | "up" | "down"
   delay?: number
