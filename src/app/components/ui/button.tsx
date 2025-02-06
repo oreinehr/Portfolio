@@ -18,9 +18,9 @@ export function Button({ className, size = "md", variant = "solid", ...props }: 
   };
 
   const variantClasses = {
-    solid: "bg-blue-500 text-white hover:bg-blue-600",
+    solid: "text-dark bg-dark",
     outline: "border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white",
-    ghost: "text-blue-500 hover:bg-blue-100",
+    ghost: "text-dark ",
   };
 
   return (
