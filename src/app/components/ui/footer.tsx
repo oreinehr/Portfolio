@@ -5,9 +5,9 @@ import { Github, Instagram, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 
 const socialIcons = [
-  { Icon: Github, href: "#" },
-  { Icon: Linkedin, href: "#" },
-  { Icon: Instagram, href: "#" },
+  { Icon: Github, href: "https://github.com/oreinehr" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/in/guilherme-reinehr-a24117340/" },
+  { Icon: Instagram, href: "https://www.instagram.com/reinehrrl/" },
 ]
 
 export function Footer() {
@@ -31,7 +31,7 @@ export function Footer() {
         </motion.p>
 
         <div className="flex space-x-4">
-          {socialIcons.map(({ Icon, href }, index) => (
+          {socialIcons.map(({ Icon }, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0 }}
@@ -39,7 +39,7 @@ export function Footer() {
               transition={{ delay: 0.2 * (index + 1) }}
               viewport={{ once: true }}
             >
-              <Button variant="" size="icon" className="transition-transform hover:scale-110">
+              <Button  size="icon" className="transition-transform hover:scale-110">
                 <Icon className="size-5" />
               </Button>
             </motion.div>
